@@ -4,10 +4,21 @@
     <selectionStates>
       <SelectionState runConfigName="USTH_Weather">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-08-23T06:20:30.105586100Z">
+        <DropdownSelection timestamp="2024-08-31T14:46:31.462051800Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Admin\.android\avd\Medium_Phone_API_35.avd" />
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=MBAIGF005470MFF" />
+            </handle>
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="WeatherActivity">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2024-08-30T07:29:23.203719600Z">
+          <Target type="DEFAULT_BOOT">
+            <handle>
+              <DeviceId pluginId="PhysicalDevice" identifier="serial=MBAIGF005470MFF" />
             </handle>
           </Target>
         </DropdownSelection>
