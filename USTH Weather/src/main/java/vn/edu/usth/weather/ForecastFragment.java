@@ -69,7 +69,7 @@ public class ForecastFragment extends Fragment {
         int color = Color.parseColor("#200000FF");
         view.setBackgroundColor(color);
 
-        // Find the parent view(FrameLayout with ID you added)
+        // Find the parent view
         LinearLayout parentView = view.findViewById(R.id.fragment_forecast);
 
         // Create the dynamic LinearLayout
@@ -92,7 +92,7 @@ public class ForecastFragment extends Fragment {
 
         // Create the ImageView for the weather icon
         ImageView weatherIcon = new ImageView(getContext());
-        // Set the image resource (replace with your actual icon)
+        // Set the image resource
         weatherIcon.setImageResource(R.drawable.sun_behind_clouds);
         dynamicLinearLayout.addView(weatherIcon);
         return dynamicLinearLayout;
