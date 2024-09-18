@@ -26,14 +26,18 @@ public final class WeatherActivity extends AppCompatActivity {
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setContentView(layout.main_activity);
+        this.setContentView(layout.activity_weather);
 
-        //Create a new fragment to be placed
-        ForecastFragment ForecastFragment = new ForecastFragment();
+        WeatherFragment weatherFragment = new WeatherFragment();
+        ForecastFragment forecastFragment = new ForecastFragment();
 
-        //Get the support fragment manager instance
-        getSupportFragmentManager().beginTransaction().add(R.id.main_activity, ForecastFragment).commit();
-        Log.i("WeatherActivity", "onCreate");
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_weather, weatherFragment)
+                .commit();
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_forecast, forecastFragment)
+                .commit();
     }
 
     protected void onStart() {
@@ -60,4 +64,5 @@ public final class WeatherActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i("WeatherActivity", "onDestroy");
     }
+
 }

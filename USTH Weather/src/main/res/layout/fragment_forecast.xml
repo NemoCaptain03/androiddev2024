@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fragment_forecast"
-    android:layout_width="1000dp"
-    android:layout_height="1400dp"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:orientation="vertical"
     android:visibility="visible"
@@ -12,12 +12,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/cloud" />
 
         <LinearLayout
@@ -29,7 +29,7 @@
                 android:id="@+id/monday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:textAlignment="center"
                 android:text="@string/monday"
                 android:textColor="@color/black" />
@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:text="Cloudy"
                 android:textColor="@color/purple_700"
                 android:textAlignment="center" />
@@ -49,12 +49,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/sun" />
 
         <LinearLayout
@@ -63,18 +63,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/monday"
+                android:id="@+id/tuesday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:textAlignment="center"
-                android:text="@string/monday"
+                android:text="@string/tuesday"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:text="Sunny"
                 android:textColor="@color/purple_700"
                 android:textAlignment="center" />
@@ -85,12 +85,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/sun_behind_clouds" />
 
         <LinearLayout
@@ -99,18 +99,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/monday"
+                android:id="@+id/wednesday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:textAlignment="center"
-                android:text="@string/monday"
+                android:text="@string/wednesday"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:text="Partly Cloudy"
                 android:textColor="@color/purple_700"
                 android:textAlignment="center" />
@@ -122,12 +122,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/sun_behind_rainy_cloud" />
 
         <LinearLayout
@@ -136,18 +136,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/monday"
+                android:id="@+id/thursday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:textAlignment="center"
-                android:text="@string/monday"
+                android:text="@string/thursday"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:text="Light Rain"
                 android:textColor="@color/purple_700"
                 android:textAlignment="center" />
@@ -159,12 +159,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/rainy_cloud" />
 
         <LinearLayout
@@ -173,18 +173,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/monday"
+                android:id="@+id/friday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:textAlignment="center"
-                android:text="@string/monday"
+                android:text="@string/friday"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:text="Rainy"
                 android:textColor="@color/purple_700"
                 android:textAlignment="center" />
@@ -196,12 +196,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/thunderclouds" />
 
         <LinearLayout
@@ -210,18 +210,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/monday"
+                android:id="@+id/saturday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:textAlignment="center"
-                android:text="@string/monday"
+                android:text="@string/saturday"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:text="Thunder"
                 android:textColor="@color/purple_700"
                 android:textAlignment="center" />
@@ -233,12 +233,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/heavy_rain" />
 
         <LinearLayout
@@ -247,18 +247,18 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/monday"
+                android:id="@+id/sunday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:textAlignment="center"
-                android:text="@string/monday"
+                android:text="@string/sunday"
                 android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="60sp"
+                android:textSize="30sp"
                 android:text="Thurnderstorm"
                 android:textColor="@color/purple_700"
                 android:textAlignment="center" />
