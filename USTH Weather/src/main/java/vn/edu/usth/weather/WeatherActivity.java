@@ -7,6 +7,8 @@ import androidx.compose.runtime.internal.StabilityInferred;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.tabs.TabLayout;
+
 import kotlin.Metadata;
 import org.jetbrains.annotations.Nullable;
 import vn.edu.usth.weather.R.layout;
@@ -31,11 +33,11 @@ public final class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(layout.activity_weather);
 
-        PagerAdapter adapter = new HomeFragmentPagerAdapter(
-                getSupportFragmentManager());
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
-        pager.setOffscreenPageLimit(3);
-        pager.setAdapter(adapter);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        pager.setOffscreenPageLimit(3);pager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(pager);
 
     }
 
