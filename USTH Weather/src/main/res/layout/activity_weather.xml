@@ -5,15 +5,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_weather"
-        android:name="vn.edu.usth.weather.WeatherFragment"
+        android:name="vn.edu.usth.weather.WeatherAndForecastFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_forecast"
-        android:name="vn.edu.usth.weather.ForecastFragment"
+        android:name="vn.edu.usth.weather.WeatherAndForecastFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>

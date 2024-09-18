@@ -6,7 +6,7 @@
     android:layout_height="200dp"
     android:layout_gravity="center"
     android:background="#75E07A"
-    tools:context=".WeatherFragment">
+    tools:context=".WeatherAndForecastFragment">
 
     <TextView
         android:layout_width="match_parent"

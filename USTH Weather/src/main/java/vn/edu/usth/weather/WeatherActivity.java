@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.compose.runtime.internal.StabilityInferred;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import kotlin.Metadata;
 import org.jetbrains.annotations.Nullable;
 import vn.edu.usth.weather.R.layout;
@@ -28,16 +31,12 @@ public final class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(layout.activity_weather);
 
-        WeatherFragment weatherFragment = new WeatherFragment();
-        ForecastFragment forecastFragment = new ForecastFragment();
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(
+                getSupportFragmentManager());
+        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        pager.setOffscreenPageLimit(3);
+        pager.setAdapter(adapter);
 
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_weather, weatherFragment)
-                .commit();
-
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.fragment_forecast, forecastFragment)
-                .commit();
     }
 
     protected void onStart() {
