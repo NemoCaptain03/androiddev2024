@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Cloudy"
+        android:text="@string/cloudy"
         android:textSize="35sp" />
 
     <ImageView
