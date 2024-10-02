@@ -20,6 +20,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
+import android.os.Handler;
+import android.os.Looper;
 
 
 import kotlin.Metadata;
@@ -42,12 +44,20 @@ public final class WeatherActivity extends AppCompatActivity {
         Log.i("WeatherActivity", "Debug");
     }
 
+    private Handler handler;
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(layout.activity_weather);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        handler = new Handler(Looper.getMainLooper());
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
         ViewPager pager = (ViewPager) findViewById(R.id.pager);
@@ -95,7 +105,7 @@ public final class WeatherActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_refresh) {
-            Toast.makeText(this, "App Refreshed", Toast.LENGTH_SHORT).show();
+            simulateNetworkRequest();
             return true;
         } else if (id == R.id.action_settings) {
             Intent intent = new Intent(this, PrefActivity.class);
@@ -104,6 +114,31 @@ public final class WeatherActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void simulateNetworkRequest() {
+        Toast.makeText(this, "Refreshing...", Toast.LENGTH_SHORT).show();
+
+        // Simulate network delay using a thread
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    // Simulate a delay for network request
+                    Thread.sleep(3000); // 3 seconds
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                // Update UI on the main thread after delay
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(WeatherActivity.this, "App Refreshed", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        }).start();
     }
 
     protected void onStart() {
