@@ -4,7 +4,7 @@
     <selectionStates>
       <SelectionState runConfigName="USTH_Weather">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-08-31T14:46:31.462051800Z">
+        <DropdownSelection timestamp="2024-10-02T00:34:19.748290200Z">
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="PhysicalDevice" identifier="serial=MBAIGF005470MFF" />
