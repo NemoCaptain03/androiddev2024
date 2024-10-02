@@ -1,5 +1,6 @@
 package vn.edu.usth.weather;
 
+
 import android.os.Bundle;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +8,13 @@ import androidx.compose.runtime.internal.StabilityInferred;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
+
+import android.media.MediaPlayer;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.nio.file.Files;
 
 import kotlin.Metadata;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +46,35 @@ public final class WeatherActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
         tabLayout.setupWithViewPager(pager);
 
+        File file = new File(getExternalFilesDir(null), "voom_voom.mp3");
+        saveFileToExternalStorage(file);
+        playMusic(file);
     }
+
+    private void saveFileToExternalStorage(File file) {
+        try (InputStream inputStream = getResources().openRawResource(R.raw.voom_voom);
+             OutputStream outputStream = Files.newOutputStream(file.toPath())) {
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = inputStream.read(buffer)) > 0) {
+                outputStream.write(buffer, 0, length);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void playMusic(File file) {
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        try {
+            mediaPlayer.setDataSource(file.getAbsolutePath());
+            mediaPlayer.prepare(); // prepare the player
+            mediaPlayer.start(); // start playback
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     protected void onStart() {
         super.onStart();
